@@ -1,0 +1,14 @@
+django
+django_components
+tox
+pytest
+flake8
+flake8-pyproject
+isort
+pre-commit
+black
+mypy
+requests
+types-requests
+whitenoise
+playwright==1.48.0

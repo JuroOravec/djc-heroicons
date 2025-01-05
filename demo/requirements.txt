@@ -1,0 +1,5 @@
+django
+django_components
+djc_heroicons
+gunicorn
+whitenoise

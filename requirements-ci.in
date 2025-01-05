@@ -1,0 +1,5 @@
+tox
+tox-gh-actions
+requests
+types-requests
+whitenoise
