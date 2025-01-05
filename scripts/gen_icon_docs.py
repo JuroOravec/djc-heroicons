@@ -124,36 +124,26 @@ def gen_icons_readme():
 
     icons_html = "## Icons\n\n"
 
-    icons_html += dedent(
-        """
-        <style>
-            .icons-grid {
-                display: flex;
-                flex-wrap: wrap;
-                font-family: monospace;
-            }
-            .icon {
-                flex: 1 0 auto;
-                display: flex;
-                width: 240px;
-                flex-direction: column;
-                align-items: center;
-                gap: 8px;
-                padding-top: 8px;
-                padding-bottom: 8px;
-            }
-        </style>\n\n
-    """
+    icon_grid_css = "display: flex; " "flex-wrap: wrap; " "font-family: monospace; "
+    icon_css = (
+        "flex: 1 0 auto; "
+        "display: flex; "
+        "width: 240px; "
+        "flex-direction: column; "
+        "align-items: center; "
+        "gap: 8px; "
+        "padding-top: 8px; "
+        "padding-bottom: 8px; "
     )
 
     for group_name, group_icons in icon_groups.items():
         icons_html += f"\n\n---\n\n### {group_name.capitalize()}\n\n"
 
-        group_html = '<div class="icons-grid">'
+        group_html = f'<div style="{icon_grid_css}">'
         for icon in group_icons:
             group_html += dedent(
                 f"""
-                <div class="icon">
+                <div style="{icon_css}">
                     <img src="./assets/{icon.path.name}" width="50">
                     {icon.name}
                 </div>
