@@ -18,7 +18,7 @@ class HeroIconsSettings(NamedTuple):
     ```python
     custom_registry = ComponentRegistry()
 
-    HEROICONS = HeroIconsSettings(
+    DJC_HEROICONS = HeroIconsSettings(
         registry=custom_registry,
     )
     ```
@@ -33,7 +33,7 @@ class HeroIconsSettings(NamedTuple):
     ```python
     custom_registry = ComponentRegistry()
 
-    HEROICONS = HeroIconsSettings(
+    DJC_HEROICONS = HeroIconsSettings(
         registry=custom_registry,
     )
     ```
@@ -56,7 +56,7 @@ class HeroIconsSettings(NamedTuple):
     If you set this to "heroicons":
 
     ```python
-    HEROICONS = HeroIconsSettings(
+    DJC_HEROICONS = HeroIconsSettings(
         component_name="heroicons",
     )
     ```
@@ -72,7 +72,7 @@ class HeroIconsSettings(NamedTuple):
 class InternalSettings:
     @property
     def _settings(self) -> HeroIconsSettings:
-        data = getattr(settings, "HEROICONS", {})
+        data = getattr(settings, "DJC_HEROICONS", {})
         return HeroIconsSettings(**data) if not isinstance(data, HeroIconsSettings) else data
 
     @property

@@ -74,12 +74,12 @@ content = Icon.render(
 ## Settings
 
 You can configure the behavior of the djc-heroicons library
-by setting a `HEROICONS` variable in your Django settings file.
+by setting a `DJC_HEROICONS` variable in your Django settings file.
 
-`HEROICONS` can be either a plain dictionary, or a instance of `HeroIconSettings`. The latter helps with intellisense and type hints:
+`DJC_HEROICONS` can be either a plain dictionary, or a instance of `HeroIconSettings`. The latter helps with intellisense and type hints:
 
 ```py
-HEROICONS = {
+DJC_HEROICONS = {
    "registry": custom_registry,
 }
 
@@ -87,7 +87,7 @@ HEROICONS = {
 
 from djc_heroicons import HeroIconsSettings
 
-HEROICONS = HeroIconsSettings(
+DJC_HEROICONS = HeroIconsSettings(
    registry=custom_registry,
 )
 ```
@@ -103,7 +103,7 @@ If `None`, the icon is registered into the default registry.
 ```python
 custom_registry = ComponentRegistry()
 
-HEROICONS = HeroIconsSettings(
+DJC_HEROICONS = HeroIconsSettings(
    registry=custom_registry,
 )
 ```
@@ -125,7 +125,7 @@ If `None`, the component is registered with the name `"icon"`.
 If you set this to `"heroicons"`:
 
 ```python
-HEROICONS = HeroIconsSettings(
+DJC_HEROICONS = HeroIconsSettings(
    component_name="heroicons",
 )
 ```

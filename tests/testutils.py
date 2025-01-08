@@ -70,7 +70,7 @@ def setup_test_config(
             "template_cache_size": 128,
             **(components or {}),
         },
-        "HEROICONS": {
+        "DJC_HEROICONS": {
             **(heroicons or {}),
         },
         "DATABASES": {
