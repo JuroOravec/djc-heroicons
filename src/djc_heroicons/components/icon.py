@@ -1,3 +1,4 @@
+import difflib
 from typing import Any, Dict, Literal, Optional
 
 from django_components import Component, types
@@ -45,11 +46,20 @@ class Icon(Component):
         if variant not in ["outline", "solid"]:
             raise ValueError(f"Invalid variant: {variant}. Must be either 'outline' or 'solid'")
 
-        icon_key = variant + "_" + name
-        if icon_key not in ICONS:
-            raise ValueError(f"Invalid icon name: {name}")
+        variant_icons = ICONS[variant]
+        if name not in variant_icons:
+            # Give users a helpful message by fuzzy-search the closest key
+            msg = ""
+            icon_names = list(variant_icons.keys())
+            if icon_names:
+                fuzzy_matches = difflib.get_close_matches(name, icon_names, n=3, cutoff=0.7)
+                if fuzzy_matches:
+                    suggestions = ", ".join([f"'{match}'" for match in fuzzy_matches])
+                    msg += f". Did you mean any of {suggestions}?"
 
-        icon_paths = ICONS[variant + "_" + name]
+            raise ValueError(f"Invalid icon name: {name}{msg}")
+
+        icon_paths = variant_icons[name]
 
         # These are set as "default" attributes, so users can override them
         # by passing them in the `attrs` argument.

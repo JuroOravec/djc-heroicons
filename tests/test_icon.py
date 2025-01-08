@@ -55,6 +55,22 @@ class TestIcon(BaseTestCase):
         with pytest.raises(ValueError, match="Invalid variant: invalid_variant. Must be either 'outline' or 'solid'"):
             Template(template_str).render(Context())
 
+    def test_gives_helpful_message_on_invalid_name(self):
+        template_str: types.django_html = """
+            {% load component_tags %}
+            {% component "icon"
+                name='ellipsis-invalid'
+                color="red"
+                attrs:class="self-center cursor-pointer"
+            / %}
+        """
+
+        with pytest.raises(
+            ValueError,
+            match="Invalid icon name: ellipsis-invalid. Did you mean any of 'ellipsis-horizontal', 'ellipsis-vertical'?"
+        ):
+            Template(template_str).render(Context())
+
     def test_icon_with_custom_attributes(self):
         template_str: types.django_html = """
             {% load component_tags %}

@@ -74,12 +74,15 @@ def download_icons():
     # Once all icons are downloaded, write them to a file
     content = "ICONS = {}\n"
     for group in icon_groups:
-        content += f"\n# {group.group.capitalize()}\n"
+        content += (
+            f"\n# {group.group.capitalize()}\n"
+            f'ICONS["{group.group}"] = {{}}\n'
+        )
         for item in group.icons:
             name = item["name"]
             paths = item["paths"]
             all_names.add(name)
-            content += f'ICONS["{group.group}_{name}"] = {paths}\n'
+            content += f'ICONS["{group.group}"]["{name}"] = {paths}\n'
 
     icon_name_literals = [f'"{name}"' for name in all_names]
     icon_type = f'IconName = Literal[{", ".join(icon_name_literals)}]'
