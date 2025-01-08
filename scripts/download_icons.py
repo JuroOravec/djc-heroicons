@@ -108,7 +108,7 @@ def download_icons():
     """
         )
         + content
-    )
+    ).lstrip()
 
     return content
 

@@ -1,4 +1,3 @@
-
 # fmt: off
 '''
 This file defines SVG PATHS of material design icons.
