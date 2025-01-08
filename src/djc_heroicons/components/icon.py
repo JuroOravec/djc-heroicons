@@ -22,6 +22,7 @@ class Icon(Component):
     """The icon component"""
 
     template: types.django_html = """
+        {% load component_tags %}
         <svg {% html_attrs attrs default_attrs %}>
             {% for path_attrs in icon_paths %}
                 <path {% html_attrs path_attrs %} />
@@ -42,9 +43,13 @@ class Icon(Component):
         attrs: Optional[Dict] = None,
     ) -> Dict:
         if variant not in ["outline", "solid"]:
-            raise ValueError(f"Invalid variant: {variant}. Must be either 'outline' or 'solid'.")
+            raise ValueError(f"Invalid variant: {variant}. Must be either 'outline' or 'solid'")
 
-        icon_paths = ICONS.get(variant + "_" + name)
+        icon_key = variant + "_" + name
+        if icon_key not in ICONS:
+            raise ValueError(f"Invalid icon name: {name}")
+
+        icon_paths = ICONS[variant + "_" + name]
 
         # These are set as "default" attributes, so users can override them
         # by passing them in the `attrs` argument.

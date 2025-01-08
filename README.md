@@ -2,7 +2,7 @@
 
 [![PyPI - Version](https://img.shields.io/pypi/v/djc-heroicons)](https://pypi.org/project/djc-heroicons/) [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/djc-heroicons)](https://pypi.org/project/djc-heroicons/) [![PyPI - License](https://img.shields.io/pypi/l/djc-heroicons)](https://github.com/JuroOravec/djc-heroicons/blob/main/LICENSE) [![PyPI - Downloads](https://img.shields.io/pypi/dm/djc-heroicons)](https://pypistats.org/packages/djc-heroicons) [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/JuroOravec/djc-heroicons/tests.yml)](https://github.com/JuroOravec/djc-heroicons/actions/workflows/tests.yml)
 
-_[HeroIcons.com](https://heroicons.com) icons for django-components._
+_[HeroIcons.com](https://heroicons.com) icons for [django-components](https://pypi.org/project/django-components/)._
 
 ## Overview
 
