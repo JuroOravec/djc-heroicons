@@ -4,6 +4,10 @@
 
 _[HeroIcons.com](https://heroicons.com) icons for [django-components](https://pypi.org/project/django-components/)._
 
+```bash
+pip install djc-heroicons
+```
+
 ## Overview
 
 djc-heroicons adds an `Icon` component that renders an `<svg>` element with the icons from [HeroIcons.com](https://heroicons.com). This icon is accessible in Django templates as `{% component "icon" %}`.
@@ -70,6 +74,25 @@ content = Icon.render(
     },
 )
 ```
+
+## Installation
+
+1. Install the package:
+
+   ```bash
+   pip install djc-heroicons
+   ```
+
+2. Add the package to `INSTALLED_APPS` of your Django project:
+
+   ```py
+   INSTALLED_APPS = [
+       ...
+       "django_components",
+       "djc_heroicons",
+       ...
+   ]
+   ```
 
 ## Settings
 
