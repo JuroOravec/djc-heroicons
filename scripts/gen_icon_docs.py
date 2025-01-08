@@ -111,9 +111,10 @@ class IconData(NamedTuple):
 
 
 def gen_icons_readme():
+    ASSETS_DIR = "assets"
     # Read all files from the assets directory
     # and insert them into the template below
-    icon_files = sorted(Path("assets").rglob("*.png"))
+    icon_files = sorted(Path(ASSETS_DIR).rglob("*.png"))
 
     icon_groups: dict[str, list[IconData]] = {}
     for file in icon_files:
@@ -144,10 +145,10 @@ def gen_icons_readme():
             group_html += dedent(
                 f"""
                 <div style="{icon_css}">
-                    <img src="./assets/{icon.path.name}" width="50">
+                    <img src="https://raw.githubusercontent.com/JuroOravec/djc-heroicons/main/{ASSETS_DIR}/{icon.path.name}" width="50">
                     {icon.name}
                 </div>
-            """
+                """
             )
         group_html += "</div>\n"
         icons_html += group_html
