@@ -4,7 +4,7 @@ import time
 from contextlib import contextmanager
 from pathlib import Path
 from textwrap import dedent
-from typing import NamedTuple
+from typing import Dict, List, NamedTuple
 
 import requests
 from playwright.sync_api import sync_playwright
@@ -116,7 +116,7 @@ def gen_icons_readme():
     # and insert them into the template below
     icon_files = sorted(Path(ASSETS_DIR).rglob("*.png"))
 
-    icon_groups: dict[str, list[IconData]] = {}
+    icon_groups: Dict[str, List[IconData]] = {}
     for file in icon_files:
         prefix, name = file.stem.split("_", maxsplit=1)
         if prefix not in icon_groups:

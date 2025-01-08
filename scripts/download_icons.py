@@ -72,7 +72,7 @@ def download_icons():
             icon_groups.append(IconGroup(variant, data))
 
     # Once all icons are downloaded, write them to a file
-    content = "ICONS: dict[VariantName, dict[IconName, list[dict[str, str]]]] = {}\n"
+    content = "ICONS: Dict[VariantName, Dict[IconName, List[Dict[str, str]]]] = {}\n"
     for group in icon_groups:
         content += f"\n# {group.group.capitalize()}\n" f'ICONS["{group.group}"] = {{}}\n'
         for item in group.icons:
@@ -101,7 +101,7 @@ def download_icons():
     The icons were extracted from the website using `scripts/download_icons.py`.
     '''
 
-    from typing import Literal
+    from typing import Dict, List, Literal
 
     {icon_type}
 
