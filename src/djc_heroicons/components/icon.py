@@ -3,8 +3,7 @@ from typing import Any, Dict, Literal, Optional
 
 from django_components import Component, types
 
-from djc_heroicons.icons import IconName, ICONS
-
+from djc_heroicons.icons import ICONS, IconName
 
 # TODO - Add once validation in django-components is fixed
 #

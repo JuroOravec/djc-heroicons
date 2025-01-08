@@ -148,7 +148,7 @@ def gen_icons_readme():
                     <img src="https://raw.githubusercontent.com/JuroOravec/djc-heroicons/main/{ASSETS_DIR}/{icon.path.name}" width="50">
                     {icon.name}
                 </div>
-                """
+                """  # noqa: E501
             )
         group_html += "</div>\n"
         icons_html += group_html

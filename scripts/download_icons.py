@@ -72,24 +72,23 @@ def download_icons():
             icon_groups.append(IconGroup(variant, data))
 
     # Once all icons are downloaded, write them to a file
-    content = "ICONS = {}\n"
+    content = "ICONS: dict[VariantName, dict[IconName, list[dict[str, str]]]] = {}\n"
     for group in icon_groups:
-        content += (
-            f"\n# {group.group.capitalize()}\n"
-            f'ICONS["{group.group}"] = {{}}\n'
-        )
+        content += f"\n# {group.group.capitalize()}\n" f'ICONS["{group.group}"] = {{}}\n'
         for item in group.icons:
             name = item["name"]
             paths = item["paths"]
             all_names.add(name)
             content += f'ICONS["{group.group}"]["{name}"] = {paths}\n'
 
-    icon_name_literals = [f'"{name}"' for name in all_names]
-    icon_type = f'IconName = Literal[{", ".join(icon_name_literals)}]'
+    icon_name_literals = sorted([f'"{name}"' for name in all_names])
+    icon_type = 'VariantName = Literal["outline", "solid"]'
+    icon_type += f'\n    IconName = Literal[{", ".join(icon_name_literals)}]'
 
     content = (
         dedent(
             f"""
+    # fmt: off
     '''
     This file defines SVG PATHS of material design icons.
 

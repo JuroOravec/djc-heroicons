@@ -1,9 +1,5 @@
 from importlib import import_module
-from typing import (
-    NamedTuple,
-    Optional,
-    Union,
-)
+from typing import NamedTuple, Optional, Union
 
 from django.conf import settings
 from django_components import ComponentRegistry
@@ -60,7 +56,7 @@ class HeroIconsSettings(NamedTuple):
         component_name="heroicons",
     )
     ```
-    
+
     You will use the component like this:
 
     ```html

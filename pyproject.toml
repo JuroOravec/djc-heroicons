@@ -80,6 +80,10 @@ exclude = [
   '.tox',
   'build',
 ]
+per-file-ignores = [
+  'icons.py:E501',
+  'tests/test_icon.py:E501',
+]
 
 [tool.mypy]
 check_untyped_defs = true

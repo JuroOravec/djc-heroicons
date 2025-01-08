@@ -67,7 +67,7 @@ class TestIcon(BaseTestCase):
 
         with pytest.raises(
             ValueError,
-            match="Invalid icon name: ellipsis-invalid. Did you mean any of 'ellipsis-horizontal', 'ellipsis-vertical'?"
+            match="Invalid icon name: ellipsis-invalid. Did you mean any of 'ellipsis-horizontal', 'ellipsis-vertical'?",
         ):
             Template(template_str).render(Context())
 
@@ -86,7 +86,7 @@ class TestIcon(BaseTestCase):
             "<!-- _RENDERED Icon_0d23cf,a1bc3f,, -->\n"
             '<svg aria-hidden="true" class="custom-class" data-djc-id-a1bc3f data-test="test" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 24px; height: 24px" viewbox="0 0 24 24">\n'
             '<path d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z" stroke-linecap="round" stroke-linejoin="round"></path>\n'
-            '</svg>'
+            "</svg>"
         )
 
     def test_icon_with_invalid_icon_name(self):
@@ -98,6 +98,7 @@ class TestIcon(BaseTestCase):
         """
         with pytest.raises(ValueError, match="Invalid icon name: ellipsis-invalid"):
             Template(template_str).render(Context())
+
 
 class TestCustomIconName(BaseTestCase):
     SETTINGS_HEROICONS = {"component_name": "my_icon"}
@@ -119,8 +120,10 @@ class TestCustomIconName(BaseTestCase):
             "</svg>"
         )
 
+
 lib = Library()
 custom_registry = ComponentRegistry(library=lib)
+
 
 class TestCustomIconRegistry(BaseTestCase):
     SETTINGS_HEROICONS = {"registry": custom_registry}
