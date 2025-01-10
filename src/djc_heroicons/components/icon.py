@@ -1,5 +1,5 @@
 import difflib
-from dataclasses import dataclass, MISSING
+from dataclasses import MISSING, dataclass
 from typing import Any, Dict, Optional, Tuple, Type
 
 from django_components import Component, types
