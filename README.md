@@ -242,6 +242,35 @@ menu: List[MenuItem]: = [
 ]
 ```
 
+### `VariantName`
+
+Type alias that holds all the valid icon variants, e.g.
+
+`Literal["outline", "solid"]`
+
+Use this for type validation and intellisense.
+
+**Example:**
+
+In the example below, the `"variant"` key of `menu` is typed, so Mypy or other linters pick it up as an error:
+
+```py
+from typing import List, TypedDict
+
+from djc_heroicons import IconName, VariantName
+
+class MenuItem(TypedDict):
+    name: str
+    icon_variant: VariantName
+    icon: IconName
+
+menu: List[MenuItem]: = [
+   {"name": "Home", "icon_variant": "outline", "icon": "home"},
+   {"name": "Settings", "icon_variant": "solid", "icon": "cog-6-tooth"},
+   {"name": "Account", "icon_variant": "outlien", "icon": "user-circe"},  <-- Typos!
+]
+```
+
 ## Release notes
 
 Read the [Release Notes](https://github.com/JuroOravec/djc-heroicons/tree/main/CHANGELOG.md)
