@@ -1,9 +1,9 @@
 import difflib
-from typing import Any, Dict, Literal, Optional
+from typing import Any, Dict, Optional
 
 from django_components import Component, types
 
-from djc_heroicons.icons import ICONS, IconName
+from djc_heroicons.icons import ICONS, IconName, VariantName
 
 # TODO - Add once validation in django-components is fixed
 #
@@ -35,7 +35,7 @@ class Icon(Component):
         /,
         *,
         name: IconName,
-        variant: Literal["outline", "solid"] = "outline",
+        variant: VariantName = "outline",
         size: int = 24,
         color: str = "currentColor",
         stroke_width: float = 1.5,
