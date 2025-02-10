@@ -117,5 +117,5 @@ virtualenv==20.28.0
     # via
     #   pre-commit
     #   tox
-whitenoise==6.7.0
+whitenoise==6.9.0
     # via -r requirements-dev.in
