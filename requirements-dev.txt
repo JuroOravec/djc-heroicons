@@ -6,8 +6,6 @@
 #
 asgiref==3.8.1
     # via django
-beautifulsoup4==4.12.3
-    # via django-components
 black==24.10.0
     # via -r requirements-dev.in
 cachetools==5.5.0
@@ -30,8 +28,10 @@ django==5.1.5
     # via
     #   -r requirements-dev.in
     #   django-components
-django-components==0.124
+django-components==0.129
     # via -r requirements-dev.in
+djc-core-html-parser==1.0.1
+    # via django-components
 filelock==3.16.1
     # via
     #   tox
@@ -97,8 +97,6 @@ pyyaml==6.0.2
     # via pre-commit
 requests==2.32.3
     # via -r requirements-dev.in
-soupsieve==2.6
-    # via beautifulsoup4
 sqlparse==0.5.2
     # via django
 tox==4.24.1
