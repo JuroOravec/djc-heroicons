@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "djc_heroicons"
-version = "1.0.3"
+version = "1.0.4"
 requires-python = ">=3.8, <4.0"
 description = "Icons from HeroIcons.com for django-components"
 keywords = ["django", "components", "heroicons", "icon", "component", "html"]
@@ -27,7 +27,7 @@ classifiers = [
 ]
 dependencies = [
     'Django>=4.2',
-    'django-components>=0.124',
+    'django-components>=0.135',
 ]
 license = {text = "MIT"}
 

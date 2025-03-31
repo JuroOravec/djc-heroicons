@@ -1,5 +1,15 @@
 # Release notes
 
+## v1.0.1
+
+#### Refactor
+
+- Pin django-components to v0.135.
+
+#### Tests
+
+- Remove custom defaults handling.
+
 ## v1.0.0 - First release
 
 _05 Jan 2025_
