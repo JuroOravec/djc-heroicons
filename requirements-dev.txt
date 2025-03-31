@@ -30,7 +30,7 @@ django==5.1.5
     # via
     #   -r requirements-dev.in
     #   django-components
-django-components==0.124
+django-components==0.135
     # via -r requirements-dev.in
 filelock==3.16.1
     # via
