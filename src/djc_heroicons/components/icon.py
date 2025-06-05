@@ -1,25 +1,26 @@
 import difflib
-from typing import Any, Dict, Optional
+from typing import Any, Dict, NamedTuple, Optional
 
-from django_components import Component, types
+from django.template import Context
+from django_components import Component, Empty, types
 
 from djc_heroicons.icons import ICONS, IconName, VariantName
-
-# TODO - Add once validation in django-components is fixed
-#
-# class IconKwargs(TypedDict):
-#     name: IconName
-#     variant: NotRequired[Literal["outline", "solid"]]
-#     size: NotRequired[int]
-#     color: NotRequired[str]
-#     stroke_width: NotRequired[float]
-#     viewbox: NotRequired[str]
-#     attrs: NotRequired[Optional[Dict]]
-# IconType = Component[EmptyTuple, IconKwargs, EmptyDict, Any, Any, Any]
 
 
 class Icon(Component):
     """The icon component"""
+
+    Args = Empty
+    Slots = Empty
+
+    class Kwargs(NamedTuple):
+        name: IconName
+        variant: VariantName
+        size: int
+        color: str
+        stroke_width: float
+        viewbox: str
+        attrs: Optional[Dict]
 
     class Defaults:
         variant: VariantName = "outline"
@@ -27,6 +28,49 @@ class Icon(Component):
         color: str = "currentColor"
         stroke_width: float = 1.5
         viewbox: str = "0 0 24 24"
+        attrs: Optional[Dict] = None
+
+    def get_template_data(self, args: Empty, kwargs: Kwargs, slots: Empty, context: Context) -> Dict:
+        if kwargs.variant not in ["outline", "solid"]:
+            raise ValueError(f"Invalid variant: {kwargs.variant}. Must be either 'outline' or 'solid'")
+
+        variant_icons = ICONS[kwargs.variant]
+        if kwargs.name not in variant_icons:
+            # Give users a helpful message by fuzzy-search the closest key
+            msg = ""
+            icon_names = list(variant_icons.keys())
+            if icon_names:
+                fuzzy_matches = difflib.get_close_matches(kwargs.name, icon_names, n=3, cutoff=0.7)
+                if fuzzy_matches:
+                    suggestions = ", ".join([f"'{match}'" for match in fuzzy_matches])
+                    msg += f". Did you mean any of {suggestions}?"
+
+            raise ValueError(f"Invalid icon name: {kwargs.name}{msg}")
+
+        icon_paths = variant_icons[kwargs.name]
+
+        # These are set as "default" attributes, so users can override them
+        # by passing them in the `attrs` argument.
+        default_attrs: Dict[str, Any] = {
+            "viewBox": kwargs.viewbox,
+            "style": f"width: {kwargs.size}px; height: {kwargs.size}px",
+            "aria-hidden": "true",
+        }
+
+        # The SVG applies the color differently in "outline" and "solid" versions
+        if kwargs.variant == "outline":
+            default_attrs["fill"] = "none"
+            default_attrs["stroke"] = kwargs.color
+            default_attrs["stroke-width"] = kwargs.stroke_width
+        else:
+            default_attrs["fill"] = kwargs.color
+            default_attrs["stroke"] = "none"
+
+        return {
+            "icon_paths": icon_paths,
+            "default_attrs": default_attrs,
+            "attrs": kwargs.attrs,
+        }
 
     template: types.django_html = """
         {% load component_tags %}
@@ -36,56 +80,3 @@ class Icon(Component):
             {% endfor %}
         </svg>
     """
-
-    def get_context_data(
-        self,
-        /,
-        *,
-        name: IconName,
-        variant: Optional[VariantName] = None,
-        size: Optional[int] = None,
-        color: Optional[str] = None,
-        stroke_width: Optional[float] = None,
-        viewbox: Optional[str] = None,
-        attrs: Optional[Dict] = None,
-    ) -> Dict:
-        if variant not in ["outline", "solid"]:
-            raise ValueError(f"Invalid variant: {variant}. Must be either 'outline' or 'solid'")
-
-        variant_icons = ICONS[variant]
-        if name not in variant_icons:
-            # Give users a helpful message by fuzzy-search the closest key
-            msg = ""
-            icon_names = list(variant_icons.keys())
-            if icon_names:
-                fuzzy_matches = difflib.get_close_matches(name, icon_names, n=3, cutoff=0.7)
-                if fuzzy_matches:
-                    suggestions = ", ".join([f"'{match}'" for match in fuzzy_matches])
-                    msg += f". Did you mean any of {suggestions}?"
-
-            raise ValueError(f"Invalid icon name: {name}{msg}")
-
-        icon_paths = variant_icons[name]
-
-        # These are set as "default" attributes, so users can override them
-        # by passing them in the `attrs` argument.
-        default_attrs: Dict[str, Any] = {
-            "viewBox": viewbox,
-            "style": f"width: {size}px; height: {size}px",
-            "aria-hidden": "true",
-        }
-
-        # The SVG applies the color differently in "outline" and "solid" versions
-        if variant == "outline":
-            default_attrs["fill"] = "none"
-            default_attrs["stroke"] = color
-            default_attrs["stroke-width"] = stroke_width
-        else:
-            default_attrs["fill"] = color
-            default_attrs["stroke"] = "none"
-
-        return {
-            "icon_paths": icon_paths,
-            "default_attrs": default_attrs,
-            "attrs": attrs,
-        }
