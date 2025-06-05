@@ -1,5 +1,11 @@
 # Release notes
 
+## v1.1.0
+
+#### Refactor
+
+- Pin django-components to v0.140.
+
 ## v1.0.4
 
 #### Refactor

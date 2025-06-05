@@ -18,7 +18,6 @@ def setup_test_config(heroicons: Optional[Dict] = None):
             }
         ],
         "COMPONENTS": {
-            "template_cache_size": 128,
             "autodiscover": False,
         },
         "DJC_HEROICONS": {

@@ -6,8 +6,6 @@
 #
 asgiref==3.8.1
     # via django
-beautifulsoup4==4.12.3
-    # via django-components
 black==24.10.0
     # via -r requirements-dev.in
 cachetools==5.5.0
@@ -30,7 +28,7 @@ django==5.1.5
     # via
     #   -r requirements-dev.in
     #   django-components
-django-components==0.135
+django-components==0.140
     # via -r requirements-dev.in
 filelock==3.16.1
     # via

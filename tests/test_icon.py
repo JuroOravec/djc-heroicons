@@ -29,9 +29,7 @@ class TestIcon:
         rendered: str = Template(template_str).render(Context())
 
         assert rendered.strip() == (
-            "<!-- _RENDERED Icon_0d23cf,a1bc3f,, -->\n"
-            "        \n"
-            '        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="red" stroke-width="1.5" class="self-center cursor-pointer" style="width: 24px; height: 24px;" data-djc-id-a1bc3f="">\n'
+            '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="red" stroke-width="1.5" class="self-center cursor-pointer" style="width: 24px; height: 24px;" data-djc-id-ca1bc3f="">\n'
             "            \n"
             '                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z" />\n'
             "            \n"
@@ -51,9 +49,7 @@ class TestIcon:
         rendered: str = Template(template_str).render(Context())
 
         assert rendered.strip() == (
-            "<!-- _RENDERED Icon_0d23cf,a1bc3f,, -->\n"
-            "        \n"
-            '        <svg viewBox="0 0 24 24" aria-hidden="true" fill="red" stroke="none" class="self-center cursor-pointer" style="width: 24px; height: 24px;" data-djc-id-a1bc3f="">\n'
+            '<svg viewBox="0 0 24 24" aria-hidden="true" fill="red" stroke="none" class="self-center cursor-pointer" style="width: 24px; height: 24px;" data-djc-id-ca1bc3f="">\n'
             "            \n"
             '                <path fill-rule="evenodd" d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" clip-rule="evenodd" />\n'
             "            \n"
@@ -100,9 +96,7 @@ class TestIcon:
         rendered: str = Template(template_str).render(Context())
 
         assert rendered.strip() == (
-            "<!-- _RENDERED Icon_0d23cf,a1bc3f,, -->\n"
-            "        \n"
-            '        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" data-test="test" class="custom-class" style="width: 24px; height: 24px;" data-djc-id-a1bc3f="">\n'
+            '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" data-test="test" class="custom-class" style="width: 24px; height: 24px;" data-djc-id-ca1bc3f="">\n'
             "            \n"
             '                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z" />\n'
             "            \n"
@@ -136,9 +130,7 @@ class TestIcon:
         rendered: str = Template(template_str).render(Context())
 
         assert rendered.strip() == (
-            "<!-- _RENDERED Icon_0d23cf,a1bc3f,, -->\n"
-            "        \n"
-            '        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="teal" stroke-width="1.5" style="width: 24px; height: 24px;" data-djc-id-a1bc3f="">\n'
+            '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="teal" stroke-width="1.5" style="width: 24px; height: 24px;" data-djc-id-ca1bc3f="">\n'
             "            \n"
             '                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z" />\n'
             "            \n"
