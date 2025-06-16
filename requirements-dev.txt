@@ -101,7 +101,7 @@ pytest==8.4.0
     # via -r requirements-dev.in
 pyyaml==6.0.2
     # via pre-commit
-requests==2.32.3
+requests==2.32.4
     # via -r requirements-dev.in
 sqlparse==0.5.2
     # via django
