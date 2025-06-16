@@ -8,7 +8,7 @@ asgiref==3.8.1
     # via django
 black==24.10.0
     # via -r requirements-dev.in
-cachetools==5.5.0
+cachetools==6.0.0
     # via tox
 certifi==2024.8.30
     # via requests
@@ -113,7 +113,7 @@ tomli==2.2.1
     #   pyproject-api
     #   pytest
     #   tox
-tox==4.24.1
+tox==4.26.0
     # via -r requirements-dev.in
 types-requests==2.32.0.20241016
     # via -r requirements-dev.in
@@ -129,7 +129,7 @@ urllib3==2.2.3
     # via
     #   requests
     #   types-requests
-virtualenv==20.28.0
+virtualenv==20.31.2
     # via
     #   pre-commit
     #   tox
