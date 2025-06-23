@@ -79,7 +79,7 @@ platformdirs==4.3.6
     #   black
     #   tox
     #   virtualenv
-playwright==1.49.1
+playwright==1.52.0
     # via -r requirements-dev.in
 pluggy==1.5.0
     # via
@@ -89,7 +89,7 @@ pre-commit==4.1.0
     # via -r requirements-dev.in
 pycodestyle==2.12.1
     # via flake8
-pyee==12.0.0
+pyee==13.0.0
     # via playwright
 pyflakes==3.2.0
     # via flake8
