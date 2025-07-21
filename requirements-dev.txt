@@ -28,7 +28,7 @@ django==4.2.23
     # via
     #   -r requirements-dev.in
     #   django-components
-django-components==0.141.1
+django-components==0.141.2
     # via -r requirements-dev.in
 djc-core-html-parser==1.0.2
     # via django-components
