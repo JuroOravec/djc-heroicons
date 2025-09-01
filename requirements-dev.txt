@@ -79,7 +79,7 @@ platformdirs==4.3.6
     #   black
     #   tox
     #   virtualenv
-playwright==1.54.0
+playwright==1.55.0
     # via -r requirements-dev.in
 pluggy==1.5.0
     # via
