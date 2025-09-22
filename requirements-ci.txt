@@ -56,5 +56,5 @@ urllib3==2.2.3
     #   types-requests
 virtualenv==20.29.1
     # via tox
-whitenoise==6.7.0
+whitenoise==6.11.0
     # via -r requirements-ci.in
