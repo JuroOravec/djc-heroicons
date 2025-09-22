@@ -6,7 +6,7 @@
 #
 asgiref==3.8.1
     # via django
-black==24.10.0
+black==25.9.0
     # via -r requirements-dev.in
 cachetools==5.5.0
     # via tox
@@ -99,6 +99,8 @@ pyproject-api==1.8.0
     # via tox
 pytest==8.4.2
     # via -r requirements-dev.in
+pytokens==0.1.10
+    # via black
 pyyaml==6.0.2
     # via pre-commit
 requests==2.32.4
