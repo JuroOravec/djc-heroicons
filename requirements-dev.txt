@@ -50,9 +50,11 @@ identify==2.6.3
     # via pre-commit
 idna==3.10
     # via requests
+importlib-metadata==8.7.0
+    # via isort
 iniconfig==2.0.0
     # via pytest
-isort==5.13.2
+isort==6.1.0
     # via -r requirements-dev.in
 mccabe==0.7.0
     # via flake8
@@ -137,3 +139,5 @@ virtualenv==20.28.0
     #   tox
 whitenoise==6.7.0
     # via -r requirements-dev.in
+zipp==3.23.0
+    # via importlib-metadata
