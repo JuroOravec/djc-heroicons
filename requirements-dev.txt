@@ -28,9 +28,9 @@ django==4.2.26
     # via
     #   -r requirements-dev.in
     #   django-components
-django-components==0.142.3
+django-components==0.143.1
     # via -r requirements-dev.in
-djc-core-html-parser==1.0.2
+djc-core-html-parser==1.0.3
     # via django-components
 exceptiongroup==1.2.2
     # via pytest
