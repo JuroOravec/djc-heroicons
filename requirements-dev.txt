@@ -8,7 +8,7 @@ asgiref==3.8.1
     # via django
 black==25.11.0
     # via -r requirements-dev.in
-cachetools==5.5.0
+cachetools==6.2.5
     # via tox
 certifi==2024.8.30
     # via requests
@@ -34,7 +34,7 @@ djc-core==1.2.2
     # via django-components
 exceptiongroup==1.2.2
     # via pytest
-filelock==3.16.1
+filelock==3.20.3
     # via
     #   tox
     #   virtualenv
@@ -66,7 +66,7 @@ mypy-extensions==1.0.0
     #   mypy
 nodeenv==1.9.1
     # via pre-commit
-packaging==24.2
+packaging==26.0
     # via
     #   black
     #   pyproject-api
@@ -76,14 +76,14 @@ pathspec==0.12.1
     # via
     #   black
     #   mypy
-platformdirs==4.3.6
+platformdirs==4.5.1
     # via
     #   black
     #   tox
     #   virtualenv
 playwright==1.57.0
     # via -r requirements-dev.in
-pluggy==1.5.0
+pluggy==1.6.0
     # via
     #   pytest
     #   tox
@@ -97,7 +97,7 @@ pyflakes==3.4.0
     # via flake8
 pygments==2.19.1
     # via pytest
-pyproject-api==1.8.0
+pyproject-api==1.10.0
     # via tox
 pytest==9.0.2
     # via -r requirements-dev.in
@@ -109,7 +109,7 @@ requests==2.32.4
     # via -r requirements-dev.in
 sqlparse==0.5.2
     # via django
-tomli==2.2.1
+tomli==2.4.0
     # via
     #   black
     #   flake8-pyproject
@@ -117,11 +117,11 @@ tomli==2.2.1
     #   pyproject-api
     #   pytest
     #   tox
-tox==4.24.1
+tox==4.34.1
     # via -r requirements-dev.in
 types-requests==2.32.0.20241016
     # via -r requirements-dev.in
-typing-extensions==4.12.2
+typing-extensions==4.15.0
     # via
     #   asgiref
     #   black
@@ -129,11 +129,12 @@ typing-extensions==4.12.2
     #   mypy
     #   pyee
     #   tox
+    #   virtualenv
 urllib3==2.2.3
     # via
     #   requests
     #   types-requests
-virtualenv==20.28.0
+virtualenv==20.36.1
     # via
     #   pre-commit
     #   tox
