@@ -99,7 +99,7 @@ pygments==2.19.1
     # via pytest
 pyproject-api==1.8.0
     # via tox
-pytest==8.4.2
+pytest==9.0.2
     # via -r requirements-dev.in
 pytokens==0.3.0
     # via black
