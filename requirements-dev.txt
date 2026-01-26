@@ -6,7 +6,7 @@
 #
 asgiref==3.8.1
     # via django
-black==25.11.0
+black==26.1.0
     # via -r requirements-dev.in
 cachetools==5.5.0
     # via tox
@@ -50,8 +50,6 @@ identify==2.6.3
     # via pre-commit
 idna==3.10
     # via requests
-importlib-metadata==8.7.0
-    # via isort
 iniconfig==2.0.0
     # via pytest
 isort==6.1.0
@@ -74,7 +72,7 @@ packaging==24.2
     #   pyproject-api
     #   pytest
     #   tox
-pathspec==0.12.1
+pathspec==1.0.3
     # via
     #   black
     #   mypy
@@ -141,5 +139,3 @@ virtualenv==20.28.0
     #   tox
 whitenoise==6.7.0
     # via -r requirements-dev.in
-zipp==3.23.0
-    # via importlib-metadata
