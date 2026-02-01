@@ -52,7 +52,7 @@ idna==3.10
     # via requests
 iniconfig==2.0.0
     # via pytest
-isort==6.1.0
+isort==7.0.0
     # via -r requirements-dev.in
 librt==0.7.4
     # via mypy
