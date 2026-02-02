@@ -81,7 +81,7 @@ platformdirs==4.5.1
     #   black
     #   tox
     #   virtualenv
-playwright==1.57.0
+playwright==1.58.0
     # via -r requirements-dev.in
 pluggy==1.6.0
     # via
