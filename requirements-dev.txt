@@ -8,14 +8,12 @@ asgiref==3.8.1
     # via django
 black==26.1.0
     # via -r requirements-dev.in
-cachetools==6.2.5
+cachetools==7.0.1
     # via tox
 certifi==2024.8.30
     # via requests
 cfgv==3.4.0
     # via pre-commit
-chardet==5.2.0
-    # via tox
 charset-normalizer==3.4.0
     # via requests
 click==8.1.7
@@ -34,8 +32,9 @@ djc-core==1.2.2
     # via django-components
 exceptiongroup==1.2.2
     # via pytest
-filelock==3.20.3
+filelock==3.24.3
     # via
+    #   python-discovery
     #   tox
     #   virtualenv
 flake8==7.3.0
@@ -76,9 +75,10 @@ pathspec==1.0.3
     # via
     #   black
     #   mypy
-platformdirs==4.5.1
+platformdirs==4.9.2
     # via
     #   black
+    #   python-discovery
     #   tox
     #   virtualenv
 playwright==1.58.0
@@ -101,6 +101,8 @@ pyproject-api==1.10.0
     # via tox
 pytest==9.0.2
     # via -r requirements-dev.in
+python-discovery==1.1.0
+    # via virtualenv
 pytokens==0.3.0
     # via black
 pyyaml==6.0.2
@@ -117,7 +119,7 @@ tomli==2.4.0
     #   pyproject-api
     #   pytest
     #   tox
-tox==4.34.1
+tox==4.46.3
     # via -r requirements-dev.in
 types-requests==2.32.4.20260107
     # via -r requirements-dev.in
@@ -134,7 +136,7 @@ urllib3==2.2.3
     # via
     #   requests
     #   types-requests
-virtualenv==20.36.1
+virtualenv==21.1.0
     # via
     #   pre-commit
     #   tox

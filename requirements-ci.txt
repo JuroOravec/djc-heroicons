@@ -4,20 +4,19 @@
 #
 #    pip-compile requirements-ci.in
 #
-cachetools==6.2.5
+cachetools==7.0.1
     # via tox
 certifi==2024.8.30
     # via requests
-chardet==5.2.0
-    # via tox
 charset-normalizer==3.3.2
     # via requests
 colorama==0.4.6
     # via tox
 distlib==0.3.8
     # via virtualenv
-filelock==3.20.3
+filelock==3.24.3
     # via
+    #   python-discovery
     #   tox
     #   virtualenv
 idna==3.10
@@ -26,21 +25,24 @@ packaging==26.0
     # via
     #   pyproject-api
     #   tox
-platformdirs==4.5.1
+platformdirs==4.9.2
     # via
+    #   python-discovery
     #   tox
     #   virtualenv
 pluggy==1.6.0
     # via tox
 pyproject-api==1.10.0
     # via tox
+python-discovery==1.1.0
+    # via virtualenv
 requests==2.32.4
     # via -r requirements-ci.in
 tomli==2.4.0
     # via
     #   pyproject-api
     #   tox
-tox==4.34.1
+tox==4.46.3
     # via
     #   -r requirements-ci.in
     #   tox-gh-actions
@@ -56,7 +58,7 @@ urllib3==2.2.3
     # via
     #   requests
     #   types-requests
-virtualenv==20.36.1
+virtualenv==21.1.0
     # via tox
 whitenoise==6.7.0
     # via -r requirements-ci.in
